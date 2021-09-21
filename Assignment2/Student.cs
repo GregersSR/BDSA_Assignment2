@@ -20,7 +20,7 @@ namespace Assignment2
 
         public Student(int id, string givenName, string surname, DateTime startDate, DateTime endDate, DateTime graduationDate) {
             Id = id;
-            GivenName = givenName;
+            GivenName = givenName; 
             Surname = surname;
             StartDate = startDate;
             EndDate = endDate;
