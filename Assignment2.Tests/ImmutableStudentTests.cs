@@ -4,12 +4,12 @@ using Assignment2;
 
 namespace Assignment2.Tests
 {
-    public class StudentTests
+    public class ImmutableStudentTests
     {
         [Fact]
         public void Student_StatusNewForAllAfterNow()
         {
-            var student = new Student(
+            var student = new ImmutableStudent(
                 1,
                 "Gregers",
                 "Rørdam",
@@ -23,7 +23,7 @@ namespace Assignment2.Tests
         [Fact]
         public void Student_StatusActiveForStartBeforeNowAndOthersAfter()
         {
-            var student = new Student(
+            var student = new ImmutableStudent(
                 1,
                 "Gregers",
                 "Rørdam",
@@ -37,7 +37,7 @@ namespace Assignment2.Tests
         [Fact]
         public void Student_StatusGraduatedForAllBeforeNowAndEndOnGraduation()
         {
-            var student = new Student(
+            var student = new ImmutableStudent(
                 1,
                 "Gregers",
                 "Rørdam",
@@ -51,7 +51,7 @@ namespace Assignment2.Tests
         [Fact]
         public void Student_StatusDropoutForStartAndEndBeforeNowAndGraduationAfter()
         {
-            var student = new Student(
+            var student = new ImmutableStudent(
                 1,
                 "Gregers",
                 "Rørdam",
@@ -65,7 +65,7 @@ namespace Assignment2.Tests
         [Fact]
         public void Student_StatusDropoutForAllBeforeNow()
         {
-            var student = new Student(
+            var student = new ImmutableStudent(
                 1,
                 "Gregers",
                 "Rørdam",
@@ -80,7 +80,7 @@ namespace Assignment2.Tests
         public void Student_ArgumentErrorIfStartAfterEnd()
         {
             Assert.Throws<ArgumentException>(() => {
-                new Student(
+                new ImmutableStudent(
                     1,
                     "Gregers",
                     "Rørdam",

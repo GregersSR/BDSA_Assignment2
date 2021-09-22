@@ -1,25 +1,25 @@
-﻿using System;
+using System;
 
 namespace Assignment2
-{   
-    public class Student
+{
+    
+    public record ImmutableStudent
     {
         int Id { get; init; }
-        public string GivenName { get; set; }
-        public string Surname { get; set; }
+        public string GivenName { get; init; }
+        public string Surname { get; init; }
 
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
-        public DateTime GraduationDate { get; set; }
+        public DateTime StartDate { get; init; }
+        public DateTime EndDate { get; init; }
+        public DateTime GraduationDate { get; init; }
 
         public Status Status { get => calculateStatus(); }
-
-        public Student(int id, string givenName, string surname, DateTime startDate, DateTime endDate, DateTime graduationDate) {
+        public ImmutableStudent(int id, string givenName, string surname, DateTime startDate, DateTime endDate, DateTime graduationDate) {
             if  (!(startDate <= endDate && startDate < graduationDate && endDate <= graduationDate)) {
                 throw new ArgumentException("StartDate must be before or on the EndDate, which must in turn be before or on GraduationDate. StartDate must be before GraduationDate, however");
             }
             Id = id;
-            GivenName = givenName; 
+            GivenName = givenName;
             Surname = surname;
             StartDate = startDate;
             EndDate = endDate;
