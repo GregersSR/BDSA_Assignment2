@@ -1,0 +1,23 @@
+@startuml
+
+actor Student
+
+actor Teaching_Team
+
+participant Exam
+
+activate Student
+
+Student -> Teaching_Team : Exam Simulation
+activate Teaching_Team
+Student -> Teaching_Team : 5 Weekly Activities
+Student -> Teaching_Team : 3 Project Reviews
+Student -> Teaching_Team : Project Demo
+deactivate Student
+
+
+Teaching_Team -> Exam : Verify
+deactivate Teaching_Team
+
+
+@enduml
